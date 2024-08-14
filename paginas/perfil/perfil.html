@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Picheu</title>
+    <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <div class="topbar-content">
+                <div class="logo">
+                    <img src="../../logo.png" alt="Picheu Logo">
+                </div>
+                <div class="login-signup">
+                    <button id="logout-button" onclick="logout()">Home</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile-section">
+            <div class="profile-container">
+                <h1>Meu Perfil</h1>
+                <div class="profile-info">
+                    <div class="profile-details">
+                        <p><strong>Nome:</strong> <span id="profile-name">Carregando...</span></p>
+                        <p><strong>Email:</strong> <span id="profile-email">Carregando...</span></p>
+                        <button onclick="editarPerfil()">Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Picheu. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../../firebaseconfig.js"></script>
+    <script src="perfil.js"></script>
+</body>
+
+</html>

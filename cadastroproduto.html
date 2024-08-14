@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de produtos</title>
+    <link rel="stylesheet" href="stylecadastro.css">
+</head>
+<body>
+    <button  onclick="voltarindex()"> voltar</button>
+
+    <h3>Cadastro de Produtos</h3>
+    <p>Escolha a coleção: 
+      <select id="colecao">
+          <option value="Mouses">Mouses</option>
+          <option value="Notebooks">Notebooks</option>
+          <option value="Teclados">Teclados</option>
+      </select>
+    </p>
+    <p>Digite o nome do produto: <input id="nome" type="text"autocomplete="off"></p>
+    <p>Digite a descricao: <input id="descricao" type="text"autocomplete="off"></p>
+    <p>Digite o preço: <input id="preco" type="number"autocomplete="off"></p>
+    <p>Digite a quantidade: <input id="quantidade" type="number"autocomplete="off"></p>
+    <p>Digite as especificações: <input id="especificacoes" type="text"autocomplete="off"></p>
+    <p>Escolha a foto:<input id="foto" type="file" accept="image/*" required></p>
+
+    <button onclick="salvarproduto()"> Salvar produto </button>
+
+    <h3>Excluir Produtos</h3>
+    <p>Escolha a coleção: 
+        <select id="colecaoDEL">
+            <option value="Mouses">Mouses</option>
+            <option value="Notebooks">Notebooks</option>
+            <option value="Teclados">Teclados</option>
+        </select>
+      </p>
+    <p>Digite o nome do produto: <input id="nomeDEL" type="text"></p>
+    <button onclick="excluirproduto()"> Excluir produto </button>
+
+
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="firebaseconfig.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picheu - Seu E-commerce de Periféricos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+          <div class="topbar-content">
+            <div class="logo">
+              <img src="logo.png" alt="Picheu Logo">
+            </div>
+            <div class="login-signup">
+                <div class="search-bar">
+                    <input type="text" autocomplete="off" id="searchInput" placeholder="Pesquisar produtos">
+                    <button id="searchButton">Pesquisar</button>
+                </div>
+                                           
+                <button id="addproduto-button" onclick="cadastrarproduto()" style="display: none;">Cadastrar ou Remover Produto</button>
+                <button id="cart-button" onclick="goCarrinho()" style="display: none;">Carrinho</button>
+                <button id="connect-button" onclick="goToLogin()">Conecte-se</button>
+                <button id="profile-button" onclick="goToProfile()" style="display: none;">Meu Perfil</button>
+                <button id="logout-button" onclick="logout()" style="display: none;">Sair</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <main class="main-content" >
+        <button id="backButton" style="display: none;">Voltar</button>   
+        <div id="search-results" style="display: none;"></div>
+
+        <section class="home">
+            <div class="container">
+                <h1>Bem-vindo ao nosso E-commerce!</h1>
+                <nav class="categories-menu">
+                    <ul>
+                        <li><a href="#">Notebooks</a></li>
+                        <li><a href="#">Mouses</a></li>
+                        <li><a href="#">Teclados</a></li>
+                    </ul>
+                </nav>
+                <div class="featured-products">
+                    <section>
+                        <div id="notebook-list"></div>
+                    </section>
+                    <section>
+                        <div id="mouse-list"></div>
+                    </section>
+                    <section>
+                        <div id="teclado-list"></div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Picheu. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="firebaseconfig.js"></script>
+    <script src="script.js" autoplay="false"></script>
+</body>
+
+</html>

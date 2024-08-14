@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Picheu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <div class="topbar-content">
+                <div class="logo">
+                    <img src="../../logo.png" alt="Picheu Logo">
+                </div>
+                <div class="login-signup">
+                    <button onclick="voltarindex()">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="cart-section">
+            <h2>Seu Carrinho</h2>
+            <ul id="cart-items"></ul>
+            <button id="checkout-btn">Finalizar Compra</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 Picheu. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../../firebaseconfig.js"></script>
+    <script src="../../script.js"></script>
+    <script src="carrinho.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Login - Picheu</title>
+</head>
+
+<body class="centralize">
+    <form>
+        <h1>Entre!</h1>
+        <br>
+        <br>
+        <div class="form-field">
+            <div><label>Email</label></div>
+            <input type="email" name="email" id="email" autocomplete="off" placeholder="Digite seu email" onchange="onChangeEmail()"/>
+            <div class="error" id="email-required-error">Email é obrigatório</div>
+            <div class="error" id="email-invalid-error">Email é inválido</div>
+        </div>
+        <div class="form-field">
+            <div><label>Senha</label></div>
+            <input type="password" name="password" id="password" placeholder="Senha" autocomplete="off" onchange="onChangePassword()"/>
+            <div class="error" id="password-required-error">Senha é obrigatória</div>
+        </div>
+        <div>
+            <button type="button" class="clear" id="recover-password-button" onclick="recoverPassword()" >Recuperar senha</button>
+        </div>
+        <div>
+            <button type="button" class="solid" id="login-button"  onclick="login()">Entrar</button>
+        </div>
+        <div>
+            <button type="button" class="clear register-button" onclick="register()">Não tem conta? Registre-se!</button>
+          </div>
+          <div>
+            <button type="button" class="clear" onclick="pularlogin()" >Agora não</button>
+        </div>
+    </form>
+</body>
+
+<link rel="stylesheet" href="login.css">
+<link rel="stylesheet" href="../../geral.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="../../firebaseconfig.js"></script>
+
+<script src="login.js"></script>
+<script src="../../validar.js"></script>
+<script src="../../carregamento.js"></script>
+
+</html>
