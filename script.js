@@ -1,30 +1,40 @@
 
+fetch('config.json')
+  .then(response => response.json())
+  .then(config => {
+    const adminEmail = atob(config.adminEmail);
 
-firebase.auth().onAuthStateChanged((user) => {
-  const connectButton = document.getElementById('connect-button');
-  const profileButton = document.getElementById('profile-button');
-  const logoutButton = document.getElementById('logout-button');
-  const addprodutoButton = document.getElementById('addproduto-button')
-  const cartButton = document.getElementById('cart-button')
-  if (user) {
-      connectButton.style.display = 'none';
-      profileButton.style.display = 'block';
-      logoutButton.style.display = 'block';
-      addprodutoButton.style.display = 'block'
-      cartButton.style.display = 'block'
-      if (user.email === 'eduardovieira@acad.ifma.edu.br') {
-        document.getElementById('addproduto-button').style.display = 'block';
-    } else {
-      document.getElementById('addproduto-button').style.display = 'none';
-    }
-  } else {
-      connectButton.style.display = 'block';
-      profileButton.style.display = 'none';
-      logoutButton.style.display = 'none';
-      addprodutoButton.style.display = 'none'
-      cartButton.style.display = 'none'
-  }
-});
+    firebase.auth().onAuthStateChanged((user) => {
+      const connectButton = document.getElementById('connect-button');
+      const profileButton = document.getElementById('profile-button');
+      const logoutButton = document.getElementById('logout-button');
+      const addprodutoButton = document.getElementById('addproduto-button');
+      const cartButton = document.getElementById('cart-button');
+
+      if (user) {
+        connectButton.style.display = 'none';
+        profileButton.style.display = 'block';
+        logoutButton.style.display = 'block';
+        addprodutoButton.style.display = 'block';
+        cartButton.style.display = 'block';
+
+        if (user.email === adminEmail) {
+          document.getElementById('addproduto-button').style.display = 'block';
+        } else {
+          document.getElementById('addproduto-button').style.display = 'none';
+        }
+      } else {
+        connectButton.style.display = 'block';
+        profileButton.style.display = 'none';
+        logoutButton.style.display = 'none';
+        addprodutoButton.style.display = 'none';
+        cartButton.style.display = 'none';
+      }
+    });
+  })
+  .catch(error => {
+    console.error("Erro ao carregar o arquivo JSON:", error);
+  });
 
 
 function cadastrarproduto() {
